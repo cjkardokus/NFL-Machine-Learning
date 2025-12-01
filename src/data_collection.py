@@ -171,7 +171,7 @@ def main():
     """
     
     # Specify years to collect data for
-    years_to_collect = [2023, 2024]
+    years_to_collect = list(range(2015, 2025))
     
     print("="*60)
     print("NFL Data Collection Script")
