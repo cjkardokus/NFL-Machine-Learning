@@ -1,0 +1,21 @@
+{
+  "model_name": "Model 3: Ridge",
+  "features": [
+    "epa_per_play_offense",
+    "success_rate_offense",
+    "epa_per_play_defense",
+    "success_rate_defense",
+    "yards_per_game_offense",
+    "yards_per_game_defense",
+    "pass_attempts_per_game",
+    "rush_attempts_per_game",
+    "fumbles_lost_per_game",
+    "interceptions_thrown_per_game",
+    "fumbles_forced_per_game",
+    "interceptions_caught_per_game",
+    "turnovers_lost_per_game",
+    "turnovers_gained_per_game",
+    "turnover_differential_per_game"
+  ],
+  "uses_scaler": true
+}

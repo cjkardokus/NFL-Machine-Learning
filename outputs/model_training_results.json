@@ -1,0 +1,181 @@
+{
+  "training_date": "2025-12-03 13:58:29",
+  "train_years": "2015-2023",
+  "test_year": "2024",
+  "models": {
+    "Model 1: Minimal": {
+      "test_r2": 0.8279,
+      "test_mae": 0.0699,
+      "test_rmse": 0.0853,
+      "cv_r2_mean": 0.7937,
+      "cv_r2_std": 0.019,
+      "num_features": 3,
+      "features": [
+        "epa_per_play_offense",
+        "epa_per_play_defense",
+        "turnover_differential_per_game"
+      ],
+      "feature_importance": [
+        {
+          "feature": "epa_per_play_offense",
+          "raw_coefficient": 1.8680788419457242,
+          "standardized_coefficient": 0.1249669104168089
+        },
+        {
+          "feature": "epa_per_play_defense",
+          "raw_coefficient": -1.7939000000185512,
+          "standardized_coefficient": -0.09081192711029865
+        },
+        {
+          "feature": "turnover_differential_per_game",
+          "raw_coefficient": 0.03524447626444082,
+          "standardized_coefficient": 0.01805220649949483
+        }
+      ]
+    },
+    "Model 2: Core": {
+      "test_r2": 0.8246,
+      "test_mae": 0.0732,
+      "test_rmse": 0.0861,
+      "cv_r2_mean": 0.7916,
+      "cv_r2_std": 0.0222,
+      "num_features": 5,
+      "features": [
+        "epa_per_play_offense",
+        "epa_per_play_defense",
+        "turnover_differential_per_game",
+        "yards_per_game_offense",
+        "yards_per_game_defense"
+      ],
+      "feature_importance": [
+        {
+          "feature": "epa_per_play_offense",
+          "raw_coefficient": 2.027087885731126,
+          "standardized_coefficient": 0.1356039715964623
+        },
+        {
+          "feature": "epa_per_play_defense",
+          "raw_coefficient": -1.7788423060586058,
+          "standardized_coefficient": -0.0900496671145767
+        },
+        {
+          "feature": "turnover_differential_per_game",
+          "raw_coefficient": 0.03040655950479141,
+          "standardized_coefficient": 0.015574227490322464
+        },
+        {
+          "feature": "yards_per_game_offense",
+          "raw_coefficient": -0.0003251470291774154,
+          "standardized_coefficient": -0.011518942365111074
+        },
+        {
+          "feature": "yards_per_game_defense",
+          "raw_coefficient": -8.724229597707479e-05,
+          "standardized_coefficient": -0.002719898515351274
+        }
+      ]
+    },
+    "Model 3: Ridge": {
+      "test_r2": 0.8347,
+      "test_mae": 0.072,
+      "test_rmse": 0.0836,
+      "cv_r2_mean": 0.7837,
+      "cv_r2_std": 0.0131,
+      "num_features": 15,
+      "features": [
+        "epa_per_play_offense",
+        "success_rate_offense",
+        "epa_per_play_defense",
+        "success_rate_defense",
+        "yards_per_game_offense",
+        "yards_per_game_defense",
+        "pass_attempts_per_game",
+        "rush_attempts_per_game",
+        "fumbles_lost_per_game",
+        "interceptions_thrown_per_game",
+        "fumbles_forced_per_game",
+        "interceptions_caught_per_game",
+        "turnovers_lost_per_game",
+        "turnovers_gained_per_game",
+        "turnover_differential_per_game"
+      ],
+      "feature_importance": [
+        {
+          "feature": "yards_per_game_offense",
+          "raw_coefficient": -0.015436322979767231,
+          "standardized_coefficient": -0.5468606469602921
+        },
+        {
+          "feature": "yards_per_game_defense",
+          "raw_coefficient": -0.00405035792347853,
+          "standardized_coefficient": -0.12627547658311758
+        },
+        {
+          "feature": "pass_attempts_per_game",
+          "raw_coefficient": 0.004626789142893473,
+          "standardized_coefficient": 0.017268374337133928
+        },
+        {
+          "feature": "epa_per_play_offense",
+          "raw_coefficient": 0.1228003064102417,
+          "standardized_coefficient": 0.008214843263436107
+        },
+        {
+          "feature": "epa_per_play_defense",
+          "raw_coefficient": -0.07854153526870586,
+          "standardized_coefficient": -0.003975978692167294
+        },
+        {
+          "feature": "turnover_differential_per_game",
+          "raw_coefficient": 0.006022929057090963,
+          "standardized_coefficient": 0.003084941829029582
+        },
+        {
+          "feature": "turnovers_gained_per_game",
+          "raw_coefficient": 0.005268628184272626,
+          "standardized_coefficient": 0.0017245331963497929
+        },
+        {
+          "feature": "interceptions_caught_per_game",
+          "raw_coefficient": 0.005929991171034326,
+          "standardized_coefficient": 0.0014701631650758595
+        },
+        {
+          "feature": "turnovers_lost_per_game",
+          "raw_coefficient": -0.0038700549176492855,
+          "standardized_coefficient": -0.0013604086326752891
+        },
+        {
+          "feature": "interceptions_thrown_per_game",
+          "raw_coefficient": -0.00378206242409146,
+          "standardized_coefficient": -0.0010297124862958275
+        },
+        {
+          "feature": "rush_attempts_per_game",
+          "raw_coefficient": -0.000277273076975898,
+          "standardized_coefficient": -0.000811774134389828
+        },
+        {
+          "feature": "success_rate_offense",
+          "raw_coefficient": 0.014813068295847106,
+          "standardized_coefficient": 0.0004265996676781882
+        },
+        {
+          "feature": "fumbles_lost_per_game",
+          "raw_coefficient": -0.0018075148245206016,
+          "standardized_coefficient": -0.00033069614638155613
+        },
+        {
+          "feature": "fumbles_forced_per_game",
+          "raw_coefficient": 0.0014406082086921635,
+          "standardized_coefficient": 0.000254370031273989
+        },
+        {
+          "feature": "success_rate_defense",
+          "raw_coefficient": -0.008886649566839407,
+          "standardized_coefficient": -0.00020086524077289706
+        }
+      ]
+    }
+  }
+}

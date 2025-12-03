@@ -223,7 +223,7 @@ def create_feature_importance_plot(model_name, feature_importance_data, output_d
     print(f"  ✓ Created feature importance plot: {clean_name}_feature_importance.png")
 
 
-def create_comparison_dashboard(model_names, r2_scores, mae_scores, rmse_scores, cv_means, cv_stds, output_dir):
+def create_comparison_dashboard(r2_scores, mae_scores, rmse_scores, cv_means, cv_stds, output_dir):
     """
     Create and save 2x2 model comparison dashboard
     
@@ -539,19 +539,8 @@ def create_visualizations(all_results, X_test, y_test, best_model_name):
     print("Generating Visualizations")
     print("="*60)
     
-    # Store predictions for comparison plot
-    model_predictions = {}
-    
-    # 1. Individual model plots (Predicted vs Actual, Feature Importance)
+   # 1. Feature importance plots
     for model_name, data in all_results.items():
-        # Get predictions (need to recreate from stored data)
-        features = data['features']
-        X_test_subset = X_test[features]
-        
-        # Note: We'd need to pass models to this function OR recalculate predictions
-        # For now, let's create feature importance plots using stored data
-        
-        # Feature Importance Bar Chart
         create_feature_importance_plot(model_name, data['metrics']['feature_importance'], output_dir)
     
     # 2. Model Comparison Bar Charts
@@ -562,7 +551,7 @@ def create_visualizations(all_results, X_test, y_test, best_model_name):
     cv_means = [all_results[m]['metrics']['cv_mean'] for m in model_names]
     cv_stds = [all_results[m]['metrics']['cv_std'] for m in model_names]
 
-    create_comparison_dashboard(model_names, r2_scores, mae_scores, rmse_scores, cv_means, cv_stds, output_dir)
+    create_comparison_dashboard(r2_scores, mae_scores, rmse_scores, cv_means, cv_stds, output_dir)
     
     # 3. Summary table as image
     create_summary_table(model_names, all_results, best_model_name, output_dir)
@@ -749,14 +738,20 @@ def main():
     
     features_model3 = [
         'epa_per_play_offense',
+        'success_rate_offense',
         'epa_per_play_defense',
-        'turnover_differential_per_game',
+        'success_rate_defense',
         'yards_per_game_offense',
         'yards_per_game_defense',
-        'success_rate_offense',
-        'success_rate_defense',
+        'pass_attempts_per_game',
         'rush_attempts_per_game',
-        'pass_attempts_per_game'
+        'fumbles_lost_per_game',
+        'interceptions_thrown_per_game',
+        'fumbles_forced_per_game',
+        'interceptions_caught_per_game',
+        'turnovers_lost_per_game',
+        'turnovers_gained_per_game',
+        'turnover_differential_per_game'
     ]
     
     # Train Model 1: Minimal (3 features)
